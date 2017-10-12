@@ -11,3 +11,37 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+export EDITOR=/usr/bin/vim
+export VISUAL=/usr/bin/vim
+
+# Enable Ctrl-x-e to edit command line
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
+bindkey '^x^e' edit-command-line
+
+# android
+export ANDROID_HOME=~/Android/Sdk
+export PATH=${PATH}:${ANDROID_HOME}/tools
+export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+export PATH="$HOME/.yarn/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+setopt interactivecomments
+
+# echo $INIT_CMD
+# if [ ! -z "$INIT_CMD" ]; then
+#     OLD_IFS=$IFS
+#     setopt shwordsplit
+#     IFS=';'
+#     for cmd in $INIT_CMD; do
+#         print -s "$cmd"  # add to history
+#         eval $cmd
+#     done
+#     unset INIT_CMD
+#     IFS=$OLD_IFS
+# fi
+
