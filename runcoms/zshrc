@@ -45,3 +45,7 @@ setopt interactivecomments
 #     IFS=$OLD_IFS
 # fi
 
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/jwatral/.sdkman"
+[[ -s "/home/jwatral/.sdkman/bin/sdkman-init.sh" ]] && source "/home/jwatral/.sdkman/bin/sdkman-init.sh"
